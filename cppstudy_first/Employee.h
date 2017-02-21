@@ -29,5 +29,12 @@ namespace Records {
 		int getSalary() const;
 
 		bool getIsHired() const;
+
+	private:
+		std::string mFirstName;
+		std::string mLastName;
+		int mEmployeeNumber;
+		int mSalary;
+		bool mHired;
 	};
 }
