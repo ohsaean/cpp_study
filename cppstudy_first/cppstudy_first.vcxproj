@@ -21,6 +21,9 @@
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Employee.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{67E5E2B5-943F-4CA9-89B0-C27B0651CEE4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
