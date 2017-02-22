@@ -24,6 +24,9 @@
   <ItemGroup>
     <ClInclude Include="Employee.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Employee.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{67E5E2B5-943F-4CA9-89B0-C27B0651CEE4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
