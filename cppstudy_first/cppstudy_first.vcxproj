@@ -22,10 +22,13 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Database.h" />
     <ClInclude Include="Employee.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{67E5E2B5-943F-4CA9-89B0-C27B0651CEE4}</ProjectGuid>
