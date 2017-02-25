@@ -7,10 +7,10 @@ using namespace std;
 using namespace Records;
 
 int displayMenu();
-int doHire(Database& db);
-int doFire(Database& db);
-int doPromote(Database& db);
-int doDemote(Database& db);
+void doHire(Database& db);
+void doFire(Database& db);
+void doPromote(Database& db);
+void doDemote(Database& db);
 
 int main() {
 	Database employeeDB;
@@ -51,25 +51,87 @@ int main() {
 
 int displayMenu()
 {
-	return 0;
+	int selection;
+	cout << endl;
+	cout << "Employee Database" << endl;
+	cout << "-----------------------" << endl;
+	cout << "1) hire " << endl;
+	cout << "2) fire " << endl;
+	cout << "3) promote " << endl;
+	cout << "4) list all " << endl;
+	cout << "5) list current " << endl;
+	cout << "6) list former " << endl;
+	cout << "0) quit " << endl;
+	cout << endl;
+	cout << "---> ";
+	cin >> selection;
+	return selection;
 }
 
-int doHire(Database & db)
+void doHire(Database & db)
 {
-	return 0;
+	string firstName;
+	string lastName;
+	cout << "first name ? ";
+	cin >> firstName;
+	cout << "last name ? ";
+	cin >> lastName;
+
+	try {
+		db.addEmployee(firstName, lastName);
+	}
+	catch (const std::exception& exception) {
+		cerr << "unable to add new employee : " << exception.what() << endl;
+	}
 }
 
-int doFire(Database & db)
+void doFire(Database & db)
 {
-	return 0;
+	int employeeNum;
+	cout << "Employee number ? ";
+	cin >> employeeNum;
+	try {
+		Employee emp = db.getEmployee(employeeNum);
+		emp.fire();
+		cout << "Employee " << employeeNum << " terminated." << endl;
+	}
+	catch (const std::exception& exception) {
+		cerr << "unable to terminated employee : " << exception.what() << endl;
+	}
 }
 
-int doPromote(Database & db)
+void doPromote(Database & db)
 {
-	return 0;
+	int employeeNum;
+	int raiseAmount;
+	cout << "Employee number ? ";
+	cin >> employeeNum;
+	cout << "how much of a raise ";
+	cin >> raiseAmount;
+
+	try {
+		Employee emp = db.getEmployee(employeeNum);
+		emp.promote(raiseAmount);
+	}
+	catch (const std::exception& exception) {
+		cerr << "unable to promote employee : " << exception.what() << endl;
+	}
 }
 
-int doDemote(Database & db)
+void doDemote(Database & db)
 {
-	return 0;
+	int employeeNum;
+	int demeritAmount;
+	cout << "Employee number? ";
+	cin >> employeeNum;
+	cout << "how much of a demerit? ";
+	cin >> demeritAmount;
+
+	try {
+		Employee emp = db.getEmployee(employeeNum);
+		emp.demote(demeritAmount);
+	}
+	catch (const std::exception& exception) {
+		cerr << "unable to demote employee : " << exception.what() << endl;
+	}
 }

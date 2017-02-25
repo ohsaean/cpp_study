@@ -31,17 +31,17 @@ namespace Records {
 			if (employee.getEmployeeNumber() == employeeNumber) {
 				return employee;
 			}
-			throw runtime_error("No employee found");
 		}
+		throw runtime_error("No employee found");
 	}
 	Employee & Database::getEmployee(const std::string & firstName, const std::string & lastName)
 	{
 		for (auto& employee : mEmployees) {
-			if (employee.getFirstName() == firstName && employee.getLastName == lastName) { // 연산자 오버로딩 되어있나??
+			if (employee.getFirstName() == firstName && employee.getLastName() == lastName) { // 연산자 오버로딩 되어있나??
 				return employee;
 			}
-			throw runtime_error("No employee found");
 		}
+		throw runtime_error("No employee found");
 	}
 	void Database::displayAll() const
 	{
